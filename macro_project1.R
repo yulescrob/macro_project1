@@ -71,11 +71,11 @@ nor_data<- data %>%
 plot(nor_data$growth_rate, nor_data$popgrowth,
      main= "Norway", xlab="Growth rate", ylab = "Population growth")#Growth rate vs population growth
 plot(nor_data$growth_rate, nor_data$gni_growth,
-     main= "Norway", xlab="Growth rate", ylab = "")#growth rate vs GNI growth
+     main= "Norway", xlab="Growth rate", ylab = "GNI growth")#growth rate vs GNI growth
 plot(nor_data$growth_rate, nor_data$cpi,
-     main= "Norway", xlab="Growth rate", ylab = "") #growth rate vs CPI
+     main= "Norway", xlab="Growth rate", ylab = "CPI") #growth rate vs CPI
 plot(nor_data$growth_rate, nor_data$laborforcert,
-     main= "Norway", xlab="Growth rate", ylab = "") #growth rate vs labor force participation rate
+     main= "Norway", xlab="Growth rate", ylab = "Labor force participation rate") #growth rate vs labor force participation rate
 
 #Analyzing Brazil
 #create data subset for Brazil
@@ -90,4 +90,3 @@ plot(bra_data$growth_rate, bra_data$cpi, #growth rate vs CPI
      main= "Brazil", xlab="Growth rate", ylab = "CPI")
 plot(bra_data$growth_rate, bra_data$laborforcert, #growth rate vs labor force participation rate
      main= "Brazil", xlab="Growth rate", ylab = "Labor force participation rate")
-
