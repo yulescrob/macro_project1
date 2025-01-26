@@ -19,9 +19,8 @@ data <- project1_data %>%
   group_by(country) %>%
   mutate(growth_rate = (GDP_pp/ lag(GDP_pp)-1)*100) #calculates growth rate
 
-#creating growth rate graphs
+#creating growth rate graphs for all countries
 library(ggplot2)
-
 growth_plot <- ggplot(data, aes(x = time, y = growth_rate, color = country)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
@@ -30,5 +29,54 @@ growth_plot <- ggplot(data, aes(x = time, y = growth_rate, color = country)) +
     y = "Growth Rate (%)",
     color = "Country"
   ) +
-  theme_classic()
+  theme_minimal()
+growth_plot
+
+
+#Part3
+#create subset of data for BGD
+bgd_data<- data %>%
+  filter(country == "Bangladesh")
+
+#adding a period column for pre-2008, 2008-2019, and 2020 onward
+bgd_data<- bgd_data%>%
+  mutate(period = case_when(time<2008 ~ "pre-2008", 
+                            time<2020 ~ "pre-2020",
+                            time<2024 ~ "post-2020") )
+
+#Average GDP growth rate for each period
+avg_growth<- bgd_data%>%
+  group_by(period)%>%
+  summarise(avg_growth_rate = mean(growth_rate,na.rm = TRUE))
+avg_growth
+
+
+#Part4
+
+#Analyzing Bangladesh
+plot(bgd_data$growth_rate, bgd_data$popgrowth)#Growth rate vs population growth
+plot(bgd_data$growth_rate, bgd_data$gni_growth)#growth rate vs GNI growth
+plot(bgd_data$growth_rate, bgd_data$cpi) #growth rate vs CPI
+plot(bgd_data$growth_rate, bgd_data$laborforcert)#growth rate vs labor force participation rate
+
+
+#Analyzing Norway
+#create data subset
+nor_data<- data %>%
+  filter(country == "Norway")
+
+plot(nor_data$growth_rate, nor_data$popgrowth)#Growth rate vs population growth
+plot(nor_data$growth_rate, nor_data$gni_growth)#growth rate vs GNI growth
+plot(nor_data$growth_rate, nor_data$cpi) #growth rate vs CPI
+plot(nor_data$growth_rate, nor_data$laborforcert) #growth rate vs labor force participation rate
+
+#Analyzing Brazil
+#create data subset for Brazil
+bra_data<- data %>%
+  filter(country == "Brazil")
+
+plot(bra_data$growth_rate, bra_data$popgrowth)#Growth rate vs population growth
+plot(bra_data$growth_rate, bra_data$gni_growth)#growth rate vs GNI growth
+plot(bra_data$growth_rate, bra_data$cpi) #growth rate vs CPI
+plot(bra_data$growth_rate, bra_data$laborforcert)#growth rate vs labor force participation rate
 
