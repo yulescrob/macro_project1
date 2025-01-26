@@ -52,12 +52,15 @@ avg_growth
 
 
 #Part4
-
 #Analyzing Bangladesh
-plot(bgd_data$growth_rate, bgd_data$popgrowth)#Growth rate vs population growth
-plot(bgd_data$growth_rate, bgd_data$gni_growth)#growth rate vs GNI growth
-plot(bgd_data$growth_rate, bgd_data$cpi) #growth rate vs CPI
-plot(bgd_data$growth_rate, bgd_data$laborforcert)#growth rate vs labor force participation rate
+plot(bgd_data$growth_rate, bgd_data$popgrowth,#Growth rate vs population growth
+     main= "Bangladesh", xlab="Growth rate", ylab = "Population growth")
+plot(bgd_data$growth_rate, bgd_data$gni_growth,#growth rate vs GNI growth
+     main= "Bangladesh", xlab="Growth rate", ylab = "GNI growth")
+plot(bgd_data$growth_rate, bgd_data$cpi, #growth rate vs CPI
+     main= "Bangladesh", xlab="Growth rate", ylab = "CPI")
+plot(bgd_data$growth_rate, bgd_data$laborforcert, #growth rate vs labor force participation rate
+     main= "Bangladesh", xlab="Growth rate", ylab = "Labor force participation rate")
 
 
 #Analyzing Norway
@@ -65,18 +68,26 @@ plot(bgd_data$growth_rate, bgd_data$laborforcert)#growth rate vs labor force par
 nor_data<- data %>%
   filter(country == "Norway")
 
-plot(nor_data$growth_rate, nor_data$popgrowth)#Growth rate vs population growth
-plot(nor_data$growth_rate, nor_data$gni_growth)#growth rate vs GNI growth
-plot(nor_data$growth_rate, nor_data$cpi) #growth rate vs CPI
-plot(nor_data$growth_rate, nor_data$laborforcert) #growth rate vs labor force participation rate
+plot(nor_data$growth_rate, nor_data$popgrowth,
+     main= "Norway", xlab="Growth rate", ylab = "Population growth")#Growth rate vs population growth
+plot(nor_data$growth_rate, nor_data$gni_growth,
+     main= "Norway", xlab="Growth rate", ylab = "")#growth rate vs GNI growth
+plot(nor_data$growth_rate, nor_data$cpi,
+     main= "Norway", xlab="Growth rate", ylab = "") #growth rate vs CPI
+plot(nor_data$growth_rate, nor_data$laborforcert,
+     main= "Norway", xlab="Growth rate", ylab = "") #growth rate vs labor force participation rate
 
 #Analyzing Brazil
 #create data subset for Brazil
 bra_data<- data %>%
   filter(country == "Brazil")
 
-plot(bra_data$growth_rate, bra_data$popgrowth)#Growth rate vs population growth
-plot(bra_data$growth_rate, bra_data$gni_growth)#growth rate vs GNI growth
-plot(bra_data$growth_rate, bra_data$cpi) #growth rate vs CPI
-plot(bra_data$growth_rate, bra_data$laborforcert)#growth rate vs labor force participation rate
+plot(bra_data$growth_rate, bra_data$popgrowth, #Growth rate vs population growth
+     main= "Brazil", xlab="Growth rate", ylab = "Population growth")
+plot(bra_data$growth_rate, bra_data$gni_growth,#growth rate vs GNI growth
+     main= "Brazil", xlab="Growth rate", ylab = "GNI growth")
+plot(bra_data$growth_rate, bra_data$cpi, #growth rate vs CPI
+     main= "Brazil", xlab="Growth rate", ylab = "CPI")
+plot(bra_data$growth_rate, bra_data$laborforcert, #growth rate vs labor force participation rate
+     main= "Brazil", xlab="Growth rate", ylab = "Labor force participation rate")
 
