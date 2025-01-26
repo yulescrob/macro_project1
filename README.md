@@ -20,4 +20,8 @@ Data was downloaded from World Bank's World Development Indicator DataBank. Unde
 
 -   GNI growth (annual %)
 
-The time selected was from 2000 to 2023. Under *Layout,* the row was set to time, column to series, and page to country. After downloading the CSV file, the foot note was removed and the columns were renamed using Excel.
+The time selected was from 2000 to 2023. Under *Layout,* the row was set to time, column to series, and page to country. After downloading the CSV file, the foot note was removed and the columns were renamed using Excel. All other data cleanning was doen in R and is under the macro_project1.R file. 
+
+### Replicating
+To replicate the project in R, make sure your data file is under your current working directory. Using file macro_project1.R, you can load and filter the data as detailed on the comments. 
+
