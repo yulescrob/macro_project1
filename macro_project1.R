@@ -52,6 +52,43 @@ avg_growth
 
 
 #Part4
+#population growth 
+library(ggplot2)
+growth_plot <- ggplot(data, aes(x = time, y = popgrowth, color = country)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Population Growth Rate",
+       x = "Year",
+       y = "Population Growth Rate",
+       color = "Country"
+  ) +
+  theme_minimal()
+growth_plot
+
+# labor force
+growth_plot <- ggplot(data, aes(x = time, y = laborforcert, color = country)) +
+  geom_line(linewidth = 1) + # Connects all points
+  geom_point(size = 3) +
+  labs(
+    title = "Labor Force Participation Rate",
+    x = "Year",
+    y = "Labor Force Participation Rate",
+    color = "Country"
+  ) +
+  theme_minimal()
+
+#cpi
+growth_plot <- ggplot(data, aes(x = time, y = cpi, color = country)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "CPI",
+       x = "Year",
+       y = "cpi",
+       color = "Country"
+  ) +
+  theme_minimal()
+growth_plot
+
 #Analyzing Bangladesh
 plot(bgd_data$growth_rate, bgd_data$popgrowth,#Growth rate vs population growth
      main= "Bangladesh", xlab="Growth rate", ylab = "Population growth")
