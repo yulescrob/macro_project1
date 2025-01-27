@@ -182,7 +182,6 @@ bra_plot_pop <- ggplot(bra_data, aes(x = growth_rate, y = popgrowth)) +
   theme_minimal()
 bra_plot_pop
 
-
 bra_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
@@ -192,7 +191,6 @@ bra_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
   ) +
   theme_minimal()
 bra_plot_gni
-
 
 bra_plot_cpi <- ggplot(bra_data, aes(x = growth_rate, y = cpi)) +
   geom_line(linewidth = 1) +
@@ -213,4 +211,3 @@ bra_plot_lbr <- ggplot(bra_data, aes(x = growth_rate, y = laborforcert)) +
   ) +
   theme_minimal()
 bra_plot_lbr
-
