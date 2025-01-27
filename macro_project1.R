@@ -62,6 +62,47 @@ plot(bgd_data$growth_rate, bgd_data$cpi, #growth rate vs CPI
 plot(bgd_data$growth_rate, bgd_data$laborforcert, #growth rate vs labor force participation rate
      main= "Bangladesh", xlab="Growth rate", ylab = "Labor force participation rate")
 
+bgd_plot_lbr <- ggplot(bgd_data, aes(x = growth_rate, y = laborforcert)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Bangladesh",
+       x = "Growth rate",
+       y = "Labor force participation rate"
+  ) +
+  theme_minimal()
+bgd_plot_lbr
+
+bgd_plot_cpi <- ggplot(bra_data, aes(x = growth_rate, y = cpi)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Bangladesh",
+       x = "Growth rate",
+       y = "Population rate"
+  ) +
+  theme_minimal()
+bgd_plot_cpi
+
+bgd_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Bangladesh",
+       x = "Growth rate",
+       y = "GNI growth"
+  ) +
+  theme_minimal()
+bgd_plot_gni 
+
+
+bgd_plot_pop <- ggplot(bra_data, aes(x = growth_rate, y = popgrowth)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Brazil",
+       x = "Growth rate",
+       y = "Population rate"
+  ) +
+  theme_minimal()
+bgd_plot_pop
+
 
 #Analyzing Norway
 #create data subset
@@ -77,6 +118,46 @@ plot(nor_data$growth_rate, nor_data$cpi,
 plot(nor_data$growth_rate, nor_data$laborforcert,
      main= "Norway", xlab="Growth rate", ylab = "Labor force participation rate") #growth rate vs labor force participation rate
 
+nor_plot_pop <- ggplot(bra_data, aes(x = growth_rate, y = popgrowth)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Norway",
+       x = "Growth rate",
+       y = "Population Growth"
+  ) +
+  theme_minimal()
+nor_plot_pop
+
+nor_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Norway",
+       x = "Growth rate",
+       y = "GNI Growth"
+  ) +
+  theme_minimal()
+nor_plot_gni
+
+nor_plot_cpi <- ggplot(bra_data, aes(x = growth_rate, y = cpi)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Norway",
+       x = "Growth rate",
+       y = "CPI"
+  ) +
+  theme_minimal()
+nor_plot_cpi
+
+nor_plot_lbr <- ggplot(bra_data, aes(x = growth_rate, y = laborforcert)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Norway",
+       x = "Growth rate",
+       y = "Labor force participation rate"
+  ) +
+  theme_minimal()
+nor_plot_lbr
+
 #Analyzing Brazil
 #create data subset for Brazil
 bra_data<- data %>%
@@ -90,3 +171,46 @@ plot(bra_data$growth_rate, bra_data$cpi, #growth rate vs CPI
      main= "Brazil", xlab="Growth rate", ylab = "CPI")
 plot(bra_data$growth_rate, bra_data$laborforcert, #growth rate vs labor force participation rate
      main= "Brazil", xlab="Growth rate", ylab = "Labor force participation rate")
+
+bra_plot_pop <- ggplot(bra_data, aes(x = growth_rate, y = popgrowth)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Brazil",
+       x = "Growth rate",
+       y = "Population Growth"
+  ) +
+  theme_minimal()
+bra_plot_pop
+
+
+bra_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Brazil",
+       x = "Growth rate",
+       y = "GNI Growth"
+  ) +
+  theme_minimal()
+bra_plot_gni
+
+
+bra_plot_cpi <- ggplot(bra_data, aes(x = growth_rate, y = cpi)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Brazil",
+       x = "Growth rate",
+       y = "CPI"
+  ) +
+  theme_minimal()
+bra_plot_cpi
+
+bra_plot_lbr <- ggplot(bra_data, aes(x = growth_rate, y = laborforcert)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Brazil",
+       x = "Growth rate",
+       y = "Labor force participation rate"
+  ) +
+  theme_minimal()
+bra_plot_lbr
+
