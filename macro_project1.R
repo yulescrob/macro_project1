@@ -38,9 +38,9 @@ growth_plot
 bgd_data<- data %>%
   filter(country == "Bangladesh")
 
-#adding a period column for pre-2008, 2008-2019, and 2020 onward
+#adding a period column for pre-2010, 2011-2019, and 2020 onward
 bgd_data<- bgd_data%>%
-  mutate(period = case_when(time<2008 ~ "pre-2008", 
+  mutate(period = case_when(time<2010 ~ "pre-2010", 
                             time<2020 ~ "pre-2020",
                             time<2024 ~ "post-2020") )
 
@@ -62,6 +62,17 @@ plot(bgd_data$growth_rate, bgd_data$cpi, #growth rate vs CPI
 plot(bgd_data$growth_rate, bgd_data$laborforcert, #growth rate vs labor force participation rate
      main= "Bangladesh", xlab="Growth rate", ylab = "Labor force participation rate")
 
+#GDP plot over the years
+bgd_gdp <- ggplot(bgd_data, aes(x = time, y = GDP_pp)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Bangladesh",
+       x = "Year",
+       y = "GDP per capita"
+  ) +
+  theme_minimal()
+bgd_gdp
+
 bgd_plot_lbr <- ggplot(bgd_data, aes(x = growth_rate, y = laborforcert)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
@@ -72,7 +83,7 @@ bgd_plot_lbr <- ggplot(bgd_data, aes(x = growth_rate, y = laborforcert)) +
   theme_minimal()
 bgd_plot_lbr
 
-bgd_plot_cpi <- ggplot(bra_data, aes(x = growth_rate, y = cpi)) +
+bgd_plot_cpi <- ggplot(bgd_data, aes(x = growth_rate, y = cpi)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
   labs(title = "Bangladesh",
@@ -82,7 +93,7 @@ bgd_plot_cpi <- ggplot(bra_data, aes(x = growth_rate, y = cpi)) +
   theme_minimal()
 bgd_plot_cpi
 
-bgd_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
+bgd_plot_gni <- ggplot(bgd_data, aes(x = growth_rate, y = gni_growth)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
   labs(title = "Bangladesh",
@@ -93,7 +104,7 @@ bgd_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
 bgd_plot_gni 
 
 
-bgd_plot_pop <- ggplot(bra_data, aes(x = growth_rate, y = popgrowth)) +
+bgd_plot_pop <- ggplot(bgd_data, aes(x = growth_rate, y = popgrowth)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
   labs(title = "Brazil",
@@ -118,7 +129,19 @@ plot(nor_data$growth_rate, nor_data$cpi,
 plot(nor_data$growth_rate, nor_data$laborforcert,
      main= "Norway", xlab="Growth rate", ylab = "Labor force participation rate") #growth rate vs labor force participation rate
 
-nor_plot_pop <- ggplot(bra_data, aes(x = growth_rate, y = popgrowth)) +
+#GDP plot over the years
+nor_gdp <- ggplot(nor_data, aes(x = time, y = GDP_pp)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Norway",
+       x = "Year",
+       y = "GDP per capita"
+  ) +
+  theme_minimal()
+nor_gdp
+
+
+nor_plot_pop <- ggplot(nor_data, aes(x = growth_rate, y = popgrowth)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
   labs(title = "Norway",
@@ -128,7 +151,7 @@ nor_plot_pop <- ggplot(bra_data, aes(x = growth_rate, y = popgrowth)) +
   theme_minimal()
 nor_plot_pop
 
-nor_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
+nor_plot_gni <- ggplot(nor_data, aes(x = growth_rate, y = gni_growth)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
   labs(title = "Norway",
@@ -138,7 +161,7 @@ nor_plot_gni <- ggplot(bra_data, aes(x = growth_rate, y = gni_growth)) +
   theme_minimal()
 nor_plot_gni
 
-nor_plot_cpi <- ggplot(bra_data, aes(x = growth_rate, y = cpi)) +
+nor_plot_cpi <- ggplot(nor_data, aes(x = growth_rate, y = cpi)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
   labs(title = "Norway",
@@ -148,7 +171,7 @@ nor_plot_cpi <- ggplot(bra_data, aes(x = growth_rate, y = cpi)) +
   theme_minimal()
 nor_plot_cpi
 
-nor_plot_lbr <- ggplot(bra_data, aes(x = growth_rate, y = laborforcert)) +
+nor_plot_lbr <- ggplot(nor_data, aes(x = growth_rate, y = laborforcert)) +
   geom_line(linewidth = 1) +
   geom_point(size = 3) +
   labs(title = "Norway",
@@ -171,6 +194,18 @@ plot(bra_data$growth_rate, bra_data$cpi, #growth rate vs CPI
      main= "Brazil", xlab="Growth rate", ylab = "CPI")
 plot(bra_data$growth_rate, bra_data$laborforcert, #growth rate vs labor force participation rate
      main= "Brazil", xlab="Growth rate", ylab = "Labor force participation rate")
+
+
+#GDP plot over the years
+bra_gdp <- ggplot(bra_data, aes(x = time, y = GDP_pp)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(title = "Brazil",
+       x = "Year",
+       y = "GDP per capita"
+  ) +
+  theme_minimal()
+bra_gdp
 
 bra_plot_pop <- ggplot(bra_data, aes(x = growth_rate, y = popgrowth)) +
   geom_line(linewidth = 1) +
